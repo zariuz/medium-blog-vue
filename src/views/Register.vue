@@ -5,7 +5,7 @@
         <div class="col-md-6 offset-md-3 col-xs-12">
           <h1 class="text-xs-center">Sign up</h1>
           <p class="text-xs-center">
-            <router-link :to="{ name: 'login' }">
+            <router-link :to="{name: 'login'}">
               Have an account?
             </router-link>
           </p>
@@ -50,7 +50,7 @@
 
 <script>
 import McvValidationErrors from '@/components/ValidationErrors';
-import { actionTypes } from '@/store/modules/auth';
+import {actionTypes} from '@/store/modules/auth';
 
 export default {
   name: 'McvRegister',
@@ -81,7 +81,7 @@ export default {
           password: this.password,
         })
         .then(() => {
-          this.$router.push({ name: 'home' });
+          this.$router.push({name: 'globalFeed'});
         });
     },
   },

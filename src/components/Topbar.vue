@@ -1,12 +1,16 @@
 <template>
   <nav class="navbar navbar-light">
     <div class="container">
-      <router-link class="navbar-brand" :to="{ name: 'home' }">
+      <router-link class="navbar-brand" :to="{name: 'globalFeed'}">
         MediumClone
       </router-link>
       <ul class="nav navbar-nav pull-xs-right">
         <li class="nav-item">
-          <router-link class="nav-link" :to="{ name: 'home' }" active-class="activ" exact
+          <router-link
+            class="nav-link"
+            :to="{name: 'globalFeed'}"
+            active-class="activ"
+            exact
             >Home</router-link
           >
         </li>
@@ -14,7 +18,7 @@
           <li class="nav-item">
             <router-link
               class="nav-link"
-              :to="{ name: 'createArticle' }"
+              :to="{name: 'createArticle'}"
               active-class="activ"
             >
               <i class="ion-compose" />
@@ -23,7 +27,7 @@
           </li>
 
           <li class="nav-item">
-            <router-link class="nav-link" :to="{ name: 'settings' }" active-class="activ">
+            <router-link class="nav-link" :to="{name: 'settings'}" active-class="activ">
               <i class="ion-gear-a" />
               &nbsp; Settings
             </router-link>
@@ -32,7 +36,7 @@
           <li class="nav-item">
             <router-link
               class="nav-link"
-              :to="{ name: 'userProfile', params: { slug: currentUser.username } }"
+              :to="{name: 'userProfile', params: {slug: currentUser.username}}"
             >
               <img class="user-pic" :src="currentUser.image" />
               &nbsp;
@@ -42,12 +46,12 @@
         </template>
         <template v-if="isAnonymous">
           <li class="nav-item">
-            <router-link class="nav-link" :to="{ name: 'login' }" active-class="activ">
+            <router-link class="nav-link" :to="{name: 'login'}" active-class="activ">
               Sign in
             </router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" :to="{ name: 'register' }" active-class="activ">
+            <router-link class="nav-link" :to="{name: 'register'}" active-class="activ">
               Sign up
             </router-link>
           </li>
@@ -58,8 +62,8 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
-import { getterTypes } from '@/store/modules/auth';
+import {mapGetters} from 'vuex';
+import {getterTypes} from '@/store/modules/auth';
 
 export default {
   name: 'McvTopbar',
